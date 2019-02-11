@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <!-- configuration -->
+        <service id="ost_form_back_button.configuration" class="OstFoundation\Services\ConfigurationService">
+            <factory service="ost_foundation.services.configuration_service" method="getConfig"/>
+            <argument type="string">OstFormBackButton</argument>
+        </service>
+
+        <!-- frontend controller listeners -->
+        <service id="ost_form_back_button.listeners.controllers.frontend.forms.post_dispatch" class="OstFormBackButton\Listeners\Controllers\Frontend\Forms">
+            <argument type="string">%ost_form_back_button.view_dir%</argument>
+            <tag name="shopware.event_listener" method="onPostDispatch" event="Enlight_Controller_Action_PostDispatch_Frontend_Forms" />
+        </service>
+
+        <service id="ost_form_back_button.listeners.controllers.frontend.forms.pre_dispatch" class="OstFormBackButton\Listeners\Controllers\Frontend\Forms">
+            <argument type="string">%ost_form_back_button.view_dir%</argument>
+            <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Frontend_Forms" />
+        </service>
+
+    </services>
+</container>
