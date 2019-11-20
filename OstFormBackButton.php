@@ -11,6 +11,9 @@
  * 1.0.1
  * - changed plugin name
  *
+ * 1.0.2
+ * - fixed listener for ticket controller
+ *
  * @package   OstFormBackButton
  *
  * @author    Eike Brandt-Warneke <e.brandt-warneke@ostermann.de>

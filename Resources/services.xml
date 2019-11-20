@@ -21,5 +21,10 @@
             <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Frontend_Forms" />
         </service>
 
+        <service id="ost_form_back_button.listeners.controllers.frontend.ticket.pre_dispatch" class="OstFormBackButton\Listeners\Controllers\Frontend\Forms">
+            <argument type="string">%ost_form_back_button.view_dir%</argument>
+            <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Frontend_Ticket" />
+        </service>
+
     </services>
 </container>
